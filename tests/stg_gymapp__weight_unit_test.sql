@@ -6,7 +6,7 @@
   {% call dbt_unit_testing.mock_ref('raw_weight', {"input_format": "csv"}) %}
 
     date,user_id,weight,measurement_unit
-    01/07/2009,1,82.50,'kg'
+    '01/07/2009',1,82.50,'kg'
   
   {% endcall %}
 
