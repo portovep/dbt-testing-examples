@@ -1,9 +1,9 @@
 {{ config(tags=['unit-test']) }}
 
-{% call dbt_unit_testing.test('stg_gymapp__weight',
+{% call dbt_unit_testing.test('stg_gym_app__weight',
     'it should cast string date to date') %}
     
-  {% call dbt_unit_testing.mock_ref('raw_weight', {"input_format": "csv"}) %}
+  {% call dbt_unit_testing.mock_source('gym_app', 'raw_weight', {"input_format": "csv"}) %}
 
     date,user_id,weight,measurement_unit
     '01/07/2009',1,82.50,'kg'

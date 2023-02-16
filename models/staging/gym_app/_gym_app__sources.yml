@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: gym_app
+    tables:
+      - name: raw_weight
