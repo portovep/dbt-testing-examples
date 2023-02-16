@@ -1,7 +1,7 @@
 {{ config(tags=['unit-test']) }}
 
 {% call dbt_unit_testing.test('stg_gym_app__weight',
-    'it should cast string date to date') %}
+    'it should cast string date to date type') %}
     
   {% call dbt_unit_testing.mock_source('gym_app', 'raw_weight', {"input_format": "csv"}) %}
 
