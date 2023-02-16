@@ -9,7 +9,10 @@ source as (
 renamed as (
 
     select
-        TO_DATE(date, 'DD/MM/YYYY') as created_date
+        TO_DATE(date, 'DD/MM/YYYY') as created_date,
+        user_id,
+        height,
+        height_unit as measurement_unit
     from source
 
 )
