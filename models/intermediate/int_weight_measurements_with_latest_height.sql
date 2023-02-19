@@ -20,7 +20,8 @@ enrich_with_lasted_height_recorded_before_the_weight_measurement as (
         weight,
         (select height
          from height
-         where  height.created_date < weight.created_date
+         where  height.created_date < weight.created_date and
+                height.user_id = weight.user_id
          order by height.created_date DESC
          limit 1) as height
     from weight
