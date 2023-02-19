@@ -1,7 +1,7 @@
 {{ config(tags=['unit-test']) }}
 
 {% call dbt_unit_testing.test ('body_mass_indexes',
-    'it should calculate the body mass intex for each weight with height record') %}
+    'it should calculate the body mass index for each weight with height record') %}
     
   {% call dbt_unit_testing.mock_ref ('int_weight_measurements_with_latest_height') %}
     select
