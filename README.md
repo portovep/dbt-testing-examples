@@ -1,13 +1,53 @@
 Welcome to your new dbt project!
 
-### Using the starter project
+## Local setup
 
-Try running the following commands:
-- dbt run
-- dbt test
+Spin up a postgres container
 
+```
+docker-compose up
+```
+
+Setup your dbt profile
+
+```
+cp profiles.example.yml profiles.yml
+```
+
+Install dbt dependencies
+
+```
+dbt deps
+```
+
+Check that everything works
+
+```
+dbt debug
+```
+
+### Running the tests
+
+All tests
+
+```
+dbt test
+```
+
+Unit tests
+
+```
+dbt test --select tag:unit-test
+```
+
+Component tests
+
+```
+dbt test --select tag:component
+```
 
 ### Resources:
+
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
 - Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
