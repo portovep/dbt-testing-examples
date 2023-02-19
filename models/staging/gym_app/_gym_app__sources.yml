@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: gym_app
+    schema: dbt_testing_example
     tables:
       - name: raw_weight
       - name: raw_height

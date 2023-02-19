@@ -14,7 +14,7 @@ weight as (
 
 enrich_with_lasted_height_recorded_before_the_weight_measurement as (
 
-    select distinct on (weight.created_date)
+    select
         weight.created_date,
         user_id,
         weight,
