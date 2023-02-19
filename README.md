@@ -1,4 +1,4 @@
-Welcome to your new dbt project!
+This repository contains examples of how to implement real unit tests for a dbt data application by using the [dbt-unit-testing](https://github.com/EqualExperts/dbt-unit-testing) package.
 
 ## Local setup
 
