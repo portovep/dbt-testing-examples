@@ -2,7 +2,7 @@
 
 ## Adding support for imperial units
 
-### Tests
+### Component test
 
 ```sql
 -- body_mass_indexes_component_test
@@ -44,6 +44,8 @@ UNION ALL
 {% endcall %}
 ```
 
+### Weight unit test
+
 ```sql
 -- stg_gym_app__weight_unit_test.sql
 
@@ -72,6 +74,8 @@ UNION ALL
 {% endcall %}
 ```
 
+### Weight unit test solution
+
 ```sql
 -- stg_gym_app__weight.sql
 
@@ -90,6 +94,8 @@ converted_to_metric_system as (
 
 select * from converted_to_metric_system
 ```
+
+### Height unit test
 
 ```sql
 -- stg_gym_app__height_unit_test.sql
@@ -117,6 +123,8 @@ UNION ALL
 
 {% endcall %}
 ```
+
+### Height unit test solution
 
 ```sql
 -- stg_gym_app__height.sql
