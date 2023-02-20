@@ -26,7 +26,7 @@ Check that everything works
 dbt debug
 ```
 
-### Running the tests
+## Running the tests
 
 All tests
 
@@ -46,7 +46,7 @@ Component tests
 dbt test --select tag:component
 ```
 
-### Running data quality test
+## Running data quality test
 
 ```
 dbt test --select tag:data-quality
