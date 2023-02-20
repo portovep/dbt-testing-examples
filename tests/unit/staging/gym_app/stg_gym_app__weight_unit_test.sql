@@ -1,4 +1,4 @@
-{{ config(tags=['unit-test']) }}
+{{ config(tags=['unit-test', 'unit-tests']) }}
 
 {% call dbt_unit_testing.test('stg_gym_app__weight',
     'it should cast string date to date type') %}

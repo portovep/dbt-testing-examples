@@ -1,4 +1,4 @@
-{{ config(tags=['unit-test']) }}
+{{ config(tags=['unit-test', 'unit-tests']) }}
 
 {% call dbt_unit_testing.test ('int_weight_measurements_with_latest_height',
     'it should enrich weight measurement with latest height measurement') %}

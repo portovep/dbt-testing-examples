@@ -1,4 +1,4 @@
-{{ config(tags=['unit-test']) }}
+{{ config(tags=['unit-test', 'unit-tests']) }}
 
 {% call dbt_unit_testing.test ('body_mass_indexes',
     'it should calculate the body mass index for each weight with height record') %}
