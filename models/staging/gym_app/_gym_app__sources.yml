@@ -10,7 +10,7 @@ sources:
           - name: measurement_unit
             tests:
               - accepted_values:
-                  values: ["kg", "pounds"]
+                  values: ["kg"]
           - name: user_id
             tests:
               - not_null
@@ -27,7 +27,7 @@ sources:
           - name: height_unit
             tests:
               - accepted_values:
-                  values: ["cm", "inches"]
+                  values: ["cm"]
           - name: user_id
             tests:
               - not_null
