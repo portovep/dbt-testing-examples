@@ -2,7 +2,7 @@ with
 
 weights_with_latest_height as (
 
-    select * from {{ dbt_unit_testing.ref('int_weight_measurements_with_latest_height') }}
+    select * from {{ ref('int_weight_measurements_with_latest_height') }}
 
 ),
 

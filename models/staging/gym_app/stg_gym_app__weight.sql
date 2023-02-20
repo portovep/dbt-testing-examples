@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ dbt_unit_testing.source('gym_app', 'raw_weight') }}
+    select * from {{ source('gym_app', 'raw_weight') }}
 
 ),
 

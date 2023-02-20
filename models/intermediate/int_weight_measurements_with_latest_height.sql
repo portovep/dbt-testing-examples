@@ -8,7 +8,7 @@ height as (
 
 weight as (
 
-    select * from {{ dbt_unit_testing.ref('stg_gym_app__weight') }}
+    select * from {{ ref('stg_gym_app__weight') }}
 
 ),
 
