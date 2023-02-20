@@ -7,6 +7,10 @@ sources:
       - name: raw_weight
         tags: ["data-quality"]
         columns:
+          - name: measurement_unit
+            tests:
+              - accepted_values:
+                  values: ["kg", "pounds"]
           - name: user_id
             tests:
               - not_null
@@ -20,6 +24,10 @@ sources:
       - name: raw_height
         tags: ["data-quality"]
         columns:
+          - name: height_unit
+            tests:
+              - accepted_values:
+                  values: ["cm", "inches"]
           - name: user_id
             tests:
               - not_null
