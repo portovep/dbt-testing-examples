@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: body_mass_indexes
+    columns:
+      - name: user_id
+        tags: ["data-quality"]
+        tests:
+          - not_null
+          - relationships:
+              to: source('gym_app', 'raw_height')
+              field: user_id
+          - relationships:
+              to: source('gym_app', 'raw_weight')
+              field: user_id
