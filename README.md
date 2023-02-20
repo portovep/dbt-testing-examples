@@ -46,6 +46,12 @@ Component tests
 dbt test --select tag:component
 ```
 
+### Running data quality test
+
+```
+dbt test --select tag:data-quality
+```
+
 ### Resources:
 
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
