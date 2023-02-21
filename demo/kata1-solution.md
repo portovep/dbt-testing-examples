@@ -23,7 +23,7 @@ UNION ALL
 
     date,user_id,height,height_unit
     '01/05/2009',1,70.87,'inches'
-    '01/05/2009',2,64.96,'cm'
+    '01/05/2009',2,64.96,'inches'
 
   {% endcall %}
 
