@@ -59,6 +59,12 @@ Component tests
 dbt test --select tag:component
 ```
 
+Contract tests
+
+```
+dbt test --select tag:contract-test-source
+```
+
 ## Running data quality tests
 
 ```
