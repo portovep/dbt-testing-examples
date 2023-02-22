@@ -1,4 +1,4 @@
-# Context
+# Kata 1: Adding support for imperial units
 
 Gym App Ltd has expanded to a new country, the UK. As part of the expansion, the backend team has added support for imperial system a.k.a 'pounds' and 'inches'.
 

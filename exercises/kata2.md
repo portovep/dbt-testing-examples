@@ -1,4 +1,4 @@
-# Context
+# Kata 2: Categorize body mass index (BMI) following WHO guidelines
 
 Our product managers are super happy with the health insights data product. They are able to quickly check at a glance what is the "health" of the users of our gym mobile app. One of the product managers has suggested to categorize the BMI based on the categorization issued by the World Health Organization (WHO).
 
