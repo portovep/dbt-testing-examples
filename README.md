@@ -39,6 +39,12 @@ Check that everything works
 dbt debug
 ```
 
+Seed the database
+
+```
+dbt seed
+```
+
 ## Running the tests
 
 All tests
