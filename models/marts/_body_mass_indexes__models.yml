@@ -2,14 +2,30 @@ version: 2
 
 models:
   - name: body_mass_indexes
+    config:
+      materialized: table
+      contract:
+        enforced: true
     columns:
       - name: user_id
         tags: ["data-quality"]
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: check
+            expression: "user_id > 0"
         tests:
-          - not_null
           - relationships:
               to: source('gym_app', 'raw_height')
               field: user_id
           - relationships:
               to: source('gym_app', 'raw_weight')
               field: user_id
+      - name: created_date
+        data_type: date
+      - name: weight
+        data_type: float
+      - name: height
+        data_type: float
+      - name: bmi
+        data_type: decimal
