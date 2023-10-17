@@ -15,3 +15,6 @@ jobs:
       - name: Install dependencies
         run: |
           dbt deps
+      - name: Debug connection
+        run: |
+          dbt debug --target test
