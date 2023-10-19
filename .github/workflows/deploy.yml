@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      environment-name:
+        required: true
+        type: string
+
+jobs:
+  deploy-test:
+    name: Deploy to test environment
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
+    env:
+      POSTGRES_HOST: ${{ vars.POSTGRES_HOST }}
+      POSTGRES_USER: ${{ vars.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_DB: ${{ vars.POSTGRES_DB }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          dbt deps
+      - name: Run seeds
+        run: |
+          dbt seed --target ${{ inputs.environment-name }}
+      - name: Run source contract tests
+        run: |
+          dbt test --target ${{ inputs.environment-name }} --select tag:contract-test-source
+      - name: Run data transformations
+        run: |
+          dbt run --target ${{ inputs.environment-name }}
