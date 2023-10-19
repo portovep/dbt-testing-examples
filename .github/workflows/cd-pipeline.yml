@@ -4,22 +4,25 @@ on:
   push:
 
 jobs:
-  build:
-    name: Build
+  test:
+    name: Test
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
+    env:
+      POSTGRES_HOST: ${{ vars.POSTGRES_HOST }}
+      POSTGRES_USER: ${{ vars.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_DB: ${{ vars.POSTGRES_DB }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install dependencies
         run: |
           dbt deps
-      - name: Debug connection
+      - name: Run unit tests
         run: |
-          dbt debug --target test
-        env:
-          POSTGRES_HOST: ${{ vars.POSTGRES_HOST }}
-          POSTGRES_USER: ${{ vars.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-          POSTGRES_DB: ${{ vars.POSTGRES_DB }}
+          dbt test --select tag:unit-test
+      - name: Run component tests
+        run: |
+          dbt test --select tag:unit-test
