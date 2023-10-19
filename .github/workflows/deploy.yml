@@ -11,6 +11,7 @@ jobs:
   deploy-test:
     name: Deploy to test environment
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }}
     container:
       image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
     env:
