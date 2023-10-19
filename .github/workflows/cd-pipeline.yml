@@ -26,11 +26,10 @@ jobs:
       - name: Run component tests
         run: |
           dbt test --target test --select tag:unit-test
-  deploy-preview:
+  deploy-test:
     name: Deploy to test environment
     needs: [test]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     container:
       image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
     env:
