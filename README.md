@@ -18,7 +18,7 @@ This repository contains examples of how to implement real unit tests for a dbt 
 - [x] ~Add katas and improve README~
 - [x] ~Add component test examples~
 - [x] ~Add support for Github Codespaces~
-- [x] Add contract test examples
+- [x] ~Add contract test examples~
 - [ ] Add data quality test examples
 
 ## Sample dbt app
@@ -29,7 +29,7 @@ Our sample dbt app is called health-insights. It takes weight and height data fr
 ## Types of tests
 The repository contains examples for both unit and component tests.
 
-![The usual test pyramid for an operational app](https://miro.medium.com/v2/resize:fit:600/format:webp/1*5sbYcZw0v0sQv5oMddkp9Q.png)
+![The usual test pyramid for an operational app](https://miro.medium.com/v2/resize:fit:800/format:webp/1*I6-e27kPOuJ9QaIgR9OwXw.png)
 
 
 ## Katas
