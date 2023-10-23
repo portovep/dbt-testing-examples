@@ -1,15 +1,16 @@
-# dbt-unit-testing-examples
+# dbt-testing-examples
 
 This repository contains examples of how to implement real unit tests for a dbt data application by using the [dbt-unit-testing](https://github.com/EqualExperts/dbt-unit-testing) package. You can also check the article I wrote on [how to get started with dbt and unit testing](https://medium.com/@pablo.porto/improving-the-code-quality-of-your-dbt-models-with-unit-tests-and-tdd-203ed0be791e).
 
 ## Features
 
 - Unit test and mocking examples with the dbt-unit-testing package
+- Katas to get started unit testing models
 - Component test examples with the dbt-unit-testing package
 - Sources contract test examples with the dbt-expectations package
-- Model contracts example with the dbt 1.5
+- Model contracts example with dbt 1.5
 - Data quality checks examples with the dbt-expectations and dbt test
-- Katas to get started unit testing models
+
 
 ## Roadmap
 
@@ -17,7 +18,7 @@ This repository contains examples of how to implement real unit tests for a dbt 
 - [x] ~Add katas and improve README~
 - [x] ~Add component test examples~
 - [x] ~Add support for Github Codespaces~
-- [ ] Add contract test examples
+- [x] Add contract test examples
 - [ ] Add data quality test examples
 
 ## Sample dbt app
