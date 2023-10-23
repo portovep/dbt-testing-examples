@@ -1,0 +1,35 @@
+name: CD Pipeline
+
+on:
+  push:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
+    env:
+      POSTGRES_HOST: ${{ vars.POSTGRES_HOST }}
+      POSTGRES_USER: ${{ vars.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_DB: ${{ vars.POSTGRES_DB }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          dbt deps
+      - name: Run unit tests
+        run: |
+          dbt test --target test --select tag:unit-test
+      - name: Run component tests
+        run: |
+          dbt test --target test --select tag:unit-test
+  deploy-test:
+    name: Deploy to test
+    needs: [test]
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment-name: test
+    secrets: inherit

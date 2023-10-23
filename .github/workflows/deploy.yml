@@ -1,0 +1,66 @@
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      environment-name:
+        required: true
+        type: string
+
+env:
+  POSTGRES_HOST: ${{ vars.POSTGRES_HOST }}
+  POSTGRES_USER: ${{ vars.POSTGRES_USER }}
+  POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+  POSTGRES_DB: ${{ vars.POSTGRES_DB }}
+
+jobs:
+  seed-source-tables:
+    name: Seed source tables
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }}
+    container:
+      image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          dbt deps
+      - name: Run seeds
+        run: |
+          dbt seed --target ${{ inputs.environment-name }}
+  source-contract-tests:
+    name: Run source contract tests
+    needs: [seed-source-tables]
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }}
+    container:
+      image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          dbt deps
+      - name: Run seeds
+        run: |
+          dbt seed --target ${{ inputs.environment-name }}\
+      - name: Run source contract tests
+        run: |
+          dbt test --target ${{ inputs.environment-name }} --select tag:contract-test-source
+  deploy:
+    name: Deploy
+    needs: [source-contract-tests]
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }}
+    container:
+      image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          dbt deps
+      - name: Run data transformations
+        run: |
+          dbt run --target ${{ inputs.environment-name }}

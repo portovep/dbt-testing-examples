@@ -68,6 +68,12 @@ Check that everything works
 dbt debug
 ```
 
+Seed the database
+
+```
+dbt seed
+```
+
 ## Running the tests
 
 All tests
@@ -86,6 +92,12 @@ Component tests
 
 ```
 dbt test --select tag:component
+```
+
+Contract tests
+
+```
+dbt test --select tag:contract-test-source
 ```
 
 ## Running data quality tests

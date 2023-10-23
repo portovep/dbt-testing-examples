@@ -1,0 +1,17 @@
+{
+  "name": "Python 3",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "pip3 install --user -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
+      "extensions": [
+        "GitHub.codespaces"
+      ]
+    }
+  }
+}

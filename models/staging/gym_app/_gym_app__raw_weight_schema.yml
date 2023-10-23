@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: gym_app
+    schema: dbt_testing_example
+    tables:
+      - name: raw_weight
+        tags: ["data-quality", "contract-test-source"]
+        columns:
+          - name: measurement_unit
+            tests:
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: text
+              - accepted_values:
+                  values: ["kg", "pounds"]
+          - name: user_id
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: integer
+          - name: weight
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: double precision
+              - dbt_utils.accepted_range:
+                  min_value: 0
+                  inclusive: false
