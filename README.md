@@ -9,7 +9,7 @@ This repository contains examples of how to implement real unit tests for a dbt 
 - Component test examples with the dbt-unit-testing package
 - Sources contract test examples with the dbt-expectations package
 - Model contracts example with dbt 1.5
-- Data quality checks examples with the dbt-expectations and dbt test
+- CI/CD pipeline example with Github Actions
 
 
 ## Roadmap
@@ -101,7 +101,7 @@ Contract tests
 dbt test --select tag:contract-test-source
 ```
 
-## Running data quality tests
+## Running data quality tests (Coming soon)
 
 ```
 dbt test --select tag:data-quality
