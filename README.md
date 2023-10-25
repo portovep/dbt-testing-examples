@@ -1,6 +1,8 @@
 # dbt-testing-examples
 
-This repository contains examples of how to implement real unit tests for a dbt data application by using the [dbt-unit-testing](https://github.com/EqualExperts/dbt-unit-testing) package. You can also check the article I wrote on [how to get started with dbt and unit testing](https://medium.com/@pablo.porto/improving-the-code-quality-of-your-dbt-models-with-unit-tests-and-tdd-203ed0be791e).
+This repository contains examples of how to implement real unit tests for a dbt data application by using the [dbt-unit-testing](https://github.com/EqualExperts/dbt-unit-testing) package. You can also check the articles I wrote on testing data pipelines and data products with dbt
+- [How to Improve The Code Quality of your Dbt Models with Unit Tests and TDD](https://medium.com/@pablo.porto/improving-the-code-quality-of-your-dbt-models-with-unit-tests-and-tdd-203ed0be791e).
+- [A Complete Guide to Effectively Scale your Data Pipelines and Data Products with Contract Testing and dbt](https://medium.com/towards-data-science/how-to-scale-your-data-pipelines-and-data-products-with-dbt-and-contract-testing-10c92ea9a443).
 
 ## Features
 
