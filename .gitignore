@@ -1,6 +1,11 @@
 
+# dbt
 target/
 dbt_packages/
 logs/
 dbt
+
 .env
+
+# elementary
+edr_target/

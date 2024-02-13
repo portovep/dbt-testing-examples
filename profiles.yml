@@ -19,3 +19,15 @@ dbt_testing_example:
       dbname: "{{ env_var('POSTGRES_DB') }}"
       schema: dbt_testing_example
       threads: 4
+
+elementary:
+  outputs:
+    default:
+      type: "postgres"
+      host: "{{ env_var('POSTGRES_HOST') }}"
+      port: 5432
+      user: "{{ env_var('POSTGRES_USER') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: "{{ env_var('POSTGRES_DB') }}"
+      schema: "dbt_testing_example_elementary"
+      threads: 4

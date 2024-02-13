@@ -111,3 +111,23 @@ dbt test --select tag:contract-test-source
 ```
 dbt test --select tag:data-quality
 ```
+
+## Setup data observability
+
+Build Elementary models. It will create empty tables, that will be updated with artifacts, metrics and test results in future dbt executions.
+
+```
+dbt run --select elementary
+```
+
+Run the tests
+
+```
+dbt test
+```
+
+Generate data observability report
+
+```
+edr report
+```
