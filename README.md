@@ -1,5 +1,7 @@
 # dbt-testing-examples
 
+[![CD Pipeline](https://github.com/portovep/dbt-testing-examples/actions/workflows/cd-pipeline.yml/badge.svg?branch=main)](https://github.com/portovep/dbt-testing-examples/actions/workflows/cd-pipeline.yml)
+
 This repository contains examples of how to implement real unit tests for a dbt data application by using the [dbt-unit-testing](https://github.com/EqualExperts/dbt-unit-testing) package. You can also check the articles I wrote on testing data pipelines and data products with dbt
 
 - [How to Improve The Code Quality of your Dbt Models with Unit Tests and TDD](https://medium.com/@pablo.porto/improving-the-code-quality-of-your-dbt-models-with-unit-tests-and-tdd-203ed0be791e).
