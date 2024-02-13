@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dbt-testing-examples"
+version = "1.3.0"
+description = "Examples of how to implement unit, component, and contract tests for dbt data apps"
+authors = ["Pablo"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dbt-postgres = "^1.7.7"
+elementary-data = "^0.13.2"
+setuptools = "^69.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
