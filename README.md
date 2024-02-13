@@ -97,7 +97,7 @@ dbt test --select tag:unit-test
 Component tests
 
 ```
-dbt test --select tag:component
+dbt test --select tag:component-test
 ```
 
 Contract tests
