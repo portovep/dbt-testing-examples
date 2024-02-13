@@ -25,7 +25,7 @@ jobs:
           dbt test --target test --select tag:unit-test
       - name: Run component tests
         run: |
-          dbt test --target test --select tag:unit-test
+          dbt test --target test --select tag:component
   deploy-test:
     name: Deploy to test
     needs: [test]
