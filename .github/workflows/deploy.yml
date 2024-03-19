@@ -79,13 +79,12 @@ jobs:
         uses: elementary-data/run-elementary-action@v1.12
         with:
           warehouse-type: postgres
-          edr-command: edr report
-            --file-path "report/report.html"
+          edr-command: edr report --target-path "report/" --file-path "report/index.html"
       - name: Upload report
         uses: actions/upload-artifact@v3
         with:
           name: report.html
-          path: .report/report.html
+          path: ./report/index.html
       - name: Deploy report
         uses: peaceiris/actions-gh-pages@v3
         with:
