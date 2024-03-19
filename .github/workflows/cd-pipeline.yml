@@ -22,7 +22,7 @@ jobs:
           dbt deps
       - name: Run unit tests
         run: |
-          dbt test --target test --select tag:unit-test
+          dbt test --target test --select tag:unit-tests
       - name: Run component tests
         run: |
           dbt test --target test --select tag:component-test
