@@ -5,16 +5,18 @@ services:
     image: mcr.microsoft.com/devcontainers/python:0-3.10-bullseye
     volumes:
       - .:/workspaces:cached
-    network_mode: service:db
     command: sleep infinity
 
   db:
     image: postgres
     restart: always
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_PASSWORD: example
 
   adminer:
     image: adminer
     restart: always
-    network_mode: service:db
+    ports:
+      - 8080:8080
