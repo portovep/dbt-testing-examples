@@ -13,7 +13,8 @@ body_mass_indexes as (
         user_id,
         weight,
         height,
-        round((weight::numeric / (height::numeric / 100) ^ 2)::numeric, 1) as bmi
+        round((weight::numeric / (height::numeric / 100) ^ 2)::numeric, 1) as bmi,
+        current_timestamp as processed_at
     from weights_with_latest_height
 )
 

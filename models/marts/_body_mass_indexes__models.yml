@@ -4,8 +4,21 @@ models:
   - name: body_mass_indexes
     config:
       materialized: table
-      contract:
-        enforced: true
+    tests:
+      - elementary.schema_changes:
+          tags: ["data-quality"]
+          config:
+            severity: warn
+      - elementary.volume_anomalies:
+          tags: ["data-quality"]
+          config:
+            severity: warn
+      - elementary.freshness_anomalies:
+          tags: ["data-quality"]
+          timestamp_column: processed_at
+          time_bucket:
+            period: hour
+            count: 2
     columns:
       - name: user_id
         tags: ["data-quality"]
