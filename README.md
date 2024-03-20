@@ -91,7 +91,7 @@ dbt test
 Unit tests
 
 ```
-dbt test --select tag:unit-test
+dbt test --select tag:unit-tests
 ```
 
 Component tests
