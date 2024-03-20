@@ -67,7 +67,7 @@ jobs:
 
   generate-observability-report:
     name: Generate observability report
-    # needs: [deploy]
+    needs: [deploy]
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment-name }}
     container:

@@ -1,0 +1,20 @@
+name: Data Pipeline
+
+on:
+  schedule:
+    - cron: "30 5 * * *"
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to run tests against"
+        type: environment
+        required: true
+        default: "test"
+
+jobs:
+  deploy-test:
+    name: Deploy to test
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment-name: ${{ inputs.environment || 'test' }}
+    secrets: inherit
