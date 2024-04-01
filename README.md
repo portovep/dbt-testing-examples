@@ -56,7 +56,13 @@ Spin up a Postgres database in a container
 docker-compose up
 ```
 
-Setup your dbt profile
+Setup the environment variables
+
+```
+cp .env.example .env
+```
+
+Setup the dbt profile
 
 ```
 cp profiles.example.yml profiles.yml
