@@ -3,12 +3,14 @@ name: CD Pipeline
 on:
   push:
 
+env:
+  DBT_VERSION: "1.7.7"
 jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/dbt-labs/dbt-postgres:1.6.3
+      image: ghcr.io/dbt-labs/dbt-postgres:${{ env.DBT_VERSION }}
     env:
       POSTGRES_HOST: ${{ vars.POSTGRES_HOST }}
       POSTGRES_USER: ${{ vars.POSTGRES_USER }}
