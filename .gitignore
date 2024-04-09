@@ -9,3 +9,6 @@ dbt
 
 # elementary
 edr_target/
+
+# evidence
+reports/
