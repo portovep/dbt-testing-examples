@@ -12,7 +12,6 @@ env:
   POSTGRES_USER: ${{ vars.POSTGRES_USER }}
   POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
   POSTGRES_DB: ${{ vars.POSTGRES_DB }}
-  DBT_VERSION: "1.7.7"
 
 jobs:
   seed-source-tables:
@@ -20,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment-name }}
     container:
-      image: ghcr.io/dbt-labs/dbt-postgres:$DBT_VERSION
+      image: ghcr.io/dbt-labs/dbt-postgres:1.7.7
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -36,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment-name }}
     container:
-      image: ghcr.io/dbt-labs/dbt-postgres:$DBT_VERSION
+      image: ghcr.io/dbt-labs/dbt-postgres:1.7.7
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -55,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment-name }}
     container:
-      image: ghcr.io/dbt-labs/dbt-postgres:$DBT_VERSION
+      image: ghcr.io/dbt-labs/dbt-postgres:1.7.7
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -72,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment-name }}
     container:
-      image: ghcr.io/dbt-labs/dbt-postgres:$DBT_VERSION
+      image: ghcr.io/dbt-labs/dbt-postgres:1.7.7
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
