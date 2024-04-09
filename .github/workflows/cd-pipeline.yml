@@ -10,7 +10,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/dbt-labs/dbt-postgres:${{ env.DBT_VERSION }}
+      image: ghcr.io/dbt-labs/dbt-postgres:$DBT_VERSION
     env:
       POSTGRES_HOST: ${{ vars.POSTGRES_HOST }}
       POSTGRES_USER: ${{ vars.POSTGRES_USER }}
