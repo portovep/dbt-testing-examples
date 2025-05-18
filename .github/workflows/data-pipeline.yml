@@ -1,8 +1,6 @@
 name: Data Pipeline
 
 on:
-  schedule:
-    - cron: "30 5 * * *"
   workflow_dispatch:
     inputs:
       environment:
